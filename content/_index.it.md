@@ -34,11 +34,12 @@ about:
     - { language: "Tedesco", level: "B1 — in corso" }
 
 techstack:
-  - { category: "Linguaggi", items: ["Python", "Go", "TypeScript", "JavaScript", "SQL", "Bash"] }
-  - { category: "Backend", items: ["FastAPI", "Flask", "Gin", "Fastify", "REST", "Microservices", "API design"] }
-  - { category: "Cloud & Infra", items: ["AWS", "Docker", "Kubernetes", "Linux", "Nginx", "GitHub Actions", "CI/CD"] }
-  - { category: "Database", items: ["PostgreSQL", "MongoDB", "Redis", "SQLite"] }
-  - { category: "Tools", items: ["Git", "System design", "Observability"] }
+  - { category: "Linguaggi", items: ["Python", "Go", "TypeScript", "SQL"] }
+  - { category: "Backend", items: ["FastAPI", "Flask", "Gin", "Fastify", "REST APIs"] }
+  - { category: "Cloud & Infrastructure", items: ["AWS", "Docker", "Kubernetes", "CI/CD"] }
+  - { category: "Data & Messaging", items: ["PostgreSQL", "MongoDB", "Redis", "Kafka"] }
+  - { category: "Observability", items: ["OpenTelemetry", "Prometheus", "Grafana", "Loki"] }
+  - { category: "Architecture & Practices", items: ["Microservices", "Event-driven", "Distributed systems", "API design", "System design"] }
 
 certifications:
   items:

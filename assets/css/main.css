@@ -203,9 +203,9 @@ h2 {
 
 /* ── Tech ── */
 .tech-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem 2rem;
 }
 
 .tech-cat h3 {
