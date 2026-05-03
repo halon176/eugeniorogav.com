@@ -1,0 +1,79 @@
+{{ define "main" }}
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      {{ with .Params.hero }}
+      <div class="avatar">ER</div>
+      <h1>{{ .name }}</h1>
+      <p class="role">{{ .role }}</p>
+      {{ with .context }}<p class="context">{{ . }}</p>{{ end }}
+      <p class="location">{{ .location }}</p>
+      <nav class="sidebar-nav">
+        {{ range .links }}
+          <a href="{{ .url }}" {{ if ne .type "email" }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ .label }}</a>
+        {{ end }}
+      </nav>
+      <div class="lang-switch">
+        {{ if eq $.Site.Language.Lang "en" }}
+          <span class="active">EN</span><span class="sep">/</span><a href="/it/">IT</a>
+        {{ else }}
+          <a href="/">EN</a><span class="sep">/</span><span class="active">IT</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </aside>
+
+  <div class="main-col">
+    {{ with .Params.about }}
+    <section class="about" id="about">
+      <h2>{{ if eq $.Site.Language.Lang "it" }}Chi sono{{ else }}About{{ end }}</h2>
+      {{ .text | markdownify }}
+      {{ with .motto }}<p class="motto">— {{ . }}</p>{{ end }}
+      <div class="languages">
+        {{ range .languages }}
+          <span><strong>{{ .language }}</strong> {{ .level }}</span>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{ with .Params.techstack }}
+    <section id="stack">
+      <h2>{{ if eq $.Site.Language.Lang "it" }}Stack tecnico{{ else }}Tech Stack{{ end }}</h2>
+      <div class="tech-grid">
+        {{ range . }}
+          <div class="tech-cat">
+            <h3>{{ .category }}</h3>
+            <div class="tech-tags">
+              {{ range .items }}<span>{{ . }}</span>{{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{ with .Params.certifications }}
+    <section id="certifications">
+      <h2>{{ if eq $.Site.Language.Lang "it" }}Certificazioni{{ else }}Certifications{{ end }}</h2>
+      {{ with .text }}<p class="cert-context">{{ . }}</p>{{ end }}
+      {{ range .items }}
+        <div class="cert-item">{{ .name }}{{ if .in_progress }}<span class="tag">{{ if eq $.Site.Language.Lang "it" }}In corso{{ else }}In progress{{ end }}</span>{{ end }}</div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    {{ with .Params.writing }}
+    <section class="writing" id="writing">
+      <h2>{{ if eq $.Site.Language.Lang "it" }}Contenuti{{ else }}Writing &amp; Content{{ end }}</h2>
+      <p>{{ .text | markdownify }}</p>
+    </section>
+    {{ end }}
+
+    <footer>
+      &copy; {{ now.Format "2006" }} Eugenio Rogav
+    </footer>
+  </div>
+</div>
+{{ end }}

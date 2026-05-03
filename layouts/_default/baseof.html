@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}Senior Backend Engineer working on distributed systems, APIs, and cloud architecture.{{ end }}" />
+
+  <meta property="og:title" content="{{ block "ogtitle" . }}{{ .Site.Title }}{{ end }}" />
+  <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}Senior Backend Engineer working on distributed systems, APIs, and cloud architecture.{{ end }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:locale" content="{{ .Site.Language.Locale }}" />
+  {{ range .Translations }}
+  <meta property="og:locale:alternate" content="{{ .Site.Language.Locale }}" />
+  {{ end }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}og-image.png" />
+
+  <link rel="canonical" href="{{ .Permalink }}" />
+  {{ range .Translations }}
+  <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}" />
+  {{ end }}
+  <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}" />
+
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  {{ if eq .Site.Language.Lang "en" }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Eugenio Rogav",
+    "jobTitle": "Senior Backend Engineer",
+    "description": "Senior Backend Engineer working on distributed systems, APIs, and cloud architecture.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Milan",
+      "addressCountry": "IT"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/halon/",
+      "https://github.com/halon176",
+      "https://happybackending.com",
+      "https://www.youtube.com/channel/UC0AYdNU4NtuxWASP4Qlil7w"
+    ],
+    "url": "{{ .Site.BaseURL }}"
+  }
+  </script>
+  {{ end }}
+</head>
+<body>
+  {{ block "main" . }}{{ end }}
+</body>
+</html>

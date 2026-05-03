@@ -1,0 +1,24 @@
+baseURL = "https://eugeniorogav.com/"
+title = "Eugenio Rogav"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+
+disableKinds = ["taxonomy", "term", "RSS", "section", "sitemap"]
+
+[languages.en]
+  label = "English"
+  locale = "en_US"
+  weight = 1
+
+[languages.it]
+  label = "Italiano"
+  locale = "it_IT"
+  weight = 2
+
+[sitemap]
+  changeFreq = "monthly"
+  priority = 0.5
+
+[minify]
+  minifyOutput = true

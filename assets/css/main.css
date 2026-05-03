@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap');
+
+:root {
+  --bg: #fafafa;
+  --bg-sidebar: #f7f7f7;
+  --text: #171717;
+  --text-secondary: #525252;
+  --text-muted: #999;
+  --border: #e5e5e5;
+  --accent: #2563eb;
+  --radius: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0a;
+    --bg-sidebar: #0f0f0f;
+    --text: #f5f5f5;
+    --text-secondary: #a3a3a3;
+    --text-muted: #666;
+    --border: #1f1f1f;
+    --accent: #3b82f6;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  font-size: 15px;
+}
+
+/* ── Layout ── */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  padding: 40px 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+}
+
+.main-col {
+  flex: 1;
+  padding: 48px 3rem;
+  min-width: 0;
+  max-width: 720px;
+}
+
+/* ── Sidebar ── */
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  color: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Serif', 'Georgia', 'Times New Roman', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin: 0 auto 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .avatar {
+    background: #e5e5e5;
+    color: #2a2a2a;
+  }
+}
+
+.sidebar-top h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.sidebar-top .role {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.sidebar-top .context {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.sidebar-top .location {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.sidebar-nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: color 0.12s;
+}
+
+.sidebar-nav a:hover { color: var(--accent); }
+
+/* ── Language switcher ── */
+.lang-switch {
+  margin-top: 20px;
+  font-size: 0.78rem;
+}
+
+.lang-switch a,
+.lang-switch .active {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.lang-switch a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.12s;
+}
+
+.lang-switch a:hover { color: var(--text); }
+
+.lang-switch .active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.lang-switch .sep {
+  color: var(--text-muted);
+  margin: 0 4px;
+}
+
+/* ── Sections (right column) ── */
+section {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+h2 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* ── About ── */
+.about p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  max-width: 540px;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.languages strong { color: var(--text); font-weight: 600; }
+
+/* ── Tech ── */
+.tech-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tech-cat h3 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tags span {
+  font-size: 0.8rem;
+  font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+  color: var(--text-secondary);
+  background: var(--bg-sidebar);
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.motto {
+  font-style: italic;
+  font-size: 0.95em;
+  color: var(--text-muted);
+  margin: 26px 0;
+  max-width: 540px;
+}
+
+/* ── Certifications ── */
+.cert-context {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  max-width: 540px;
+}
+
+.cert-item {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.cert-item .tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-left: 0.5rem;
+}
+
+/* ── Writing ── */
+.writing p { font-size: 0.9rem; color: var(--text-secondary); max-width: 540px; }
+.writing a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.writing a:hover { text-decoration: underline; }
+
+/* ── Footer ── */
+.main-col footer {
+  padding-top: 1rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ── Work detail ── */
+.work-detail .back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.work-detail .back:hover { color: var(--accent); }
+
+.work-detail h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.work-detail header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.work-detail .content { color: var(--text-secondary); line-height: 1.8; }
+
+.work-detail .content h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 2rem 0 0.75rem;
+}
+
+.work-detail .content p { margin-bottom: 0.85rem; }
+
+.work-detail .content ul, .work-detail .content ol {
+  margin-bottom: 0.85rem;
+  padding-left: 1.25rem;
+}
+
+.work-detail .content li { margin-bottom: 0.4rem; }
+
+code {
+  font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+pre {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  margin-bottom: 0.85rem;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .layout { display: block; }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+  }
+
+  .avatar { margin-left: 0; }
+
+  .sidebar-nav { gap: 8px; }
+
+  .main-col { padding: 2rem 1.5rem; max-width: none; }
+
+  .main-col footer { text-align: center; padding: 2rem 0; }
+}
