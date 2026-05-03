@@ -4,7 +4,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 
-disableKinds = ["taxonomy", "term", "RSS", "section", "sitemap"]
+disableKinds = ["taxonomy", "term", "RSS", "section"]
 
 [languages.en]
   label = "English"
