@@ -35,13 +35,12 @@ about:
 
 techstack:
   - { category: "Languages", items: ["Python", "Go", "TypeScript", "JavaScript", "SQL", "Bash"] }
-  - { category: "Backend", items: ["Django", "FastAPI", "Flask", "Gin", "Fastify", "REST", "Microservices", "API design"] }
+  - { category: "Backend", items: ["FastAPI", "Flask", "Gin", "Fastify", "REST", "Microservices", "API design"] }
   - { category: "Cloud & Infra", items: ["AWS", "Docker", "Kubernetes", "Linux", "Nginx", "GitHub Actions", "CI/CD"] }
   - { category: "Databases", items: ["PostgreSQL", "MongoDB", "Redis", "SQLite"] }
   - { category: "Tools", items: ["Git", "System design", "Observability"] }
 
 certifications:
-  text: "Actively pursuing the AWS architecture certification track, starting with the Solutions Architect Associate."
   items:
     - name: "AWS Solutions Architect Associate (SAA-C03)"
       in_progress: true

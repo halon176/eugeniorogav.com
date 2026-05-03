@@ -22,7 +22,7 @@ description: "Senior Backend Engineer specializzato in sistemi distribuiti, API 
 
 about:
   text: |
-    Senior Backend Engineer con oltre 5 anni di esperienza nella progettazione di microservizi, API REST e data pipeline in Python e Go. Attualmente in NTT Data, dove lavoro all'integrazione di dati retail per sistemi transazionali ad alto volume. Mi concentro su AWS, sistemi distribuiti e decisioni architetturali pulite.
+    Senior Backend Engineer con oltre 5 anni di esperienza nella progettazione di microservizi, API REST e data pipeline in Python e Go. Attualmente in NTT Data, dove lavoro all'integrazione di dati retail per sistemi transazionali ad alto volume. Mi concentro su AWS, sistemi distribuiti e scelte architetturali chiare.
 
     Gestisco [Happy Backending](https://happybackending.com), un canale YouTube e blog dove condivido pratiche di backend engineering con la community italiana di sviluppatori.
 
@@ -35,13 +35,12 @@ about:
 
 techstack:
   - { category: "Linguaggi", items: ["Python", "Go", "TypeScript", "JavaScript", "SQL", "Bash"] }
-  - { category: "Backend", items: ["Django", "FastAPI", "Flask", "Gin", "Fastify", "REST", "Microservizi", "API design"] }
-  - { category: "Cloud e infrastruttura", items: ["AWS", "Docker", "Kubernetes", "Linux", "Nginx", "GitHub Actions", "CI/CD"] }
+  - { category: "Backend", items: ["FastAPI", "Flask", "Gin", "Fastify", "REST", "Microservices", "API design"] }
+  - { category: "Cloud & Infra", items: ["AWS", "Docker", "Kubernetes", "Linux", "Nginx", "GitHub Actions", "CI/CD"] }
   - { category: "Database", items: ["PostgreSQL", "MongoDB", "Redis", "SQLite"] }
-  - { category: "Strumenti", items: ["Git", "System design", "Osservabilità"] }
+  - { category: "Tools", items: ["Git", "System design", "Observability"] }
 
 certifications:
-  text: "Sto lavorando attivamente al percorso di certificazioni AWS, partendo dalla Solutions Architect Associate."
   items:
     - name: "AWS Solutions Architect Associate (SAA-C03)"
       in_progress: true

@@ -57,7 +57,6 @@
     {{ with .Params.certifications }}
     <section id="certifications">
       <h2>{{ if eq $.Site.Language.Lang "it" }}Certificazioni{{ else }}Certifications{{ end }}</h2>
-      {{ with .text }}<p class="cert-context">{{ . }}</p>{{ end }}
       {{ range .items }}
         <div class="cert-item">{{ .name }}{{ if .in_progress }}<span class="tag">{{ if eq $.Site.Language.Lang "it" }}In corso{{ else }}In progress{{ end }}</span>{{ end }}</div>
       {{ end }}
