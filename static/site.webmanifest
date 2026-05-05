@@ -1,9 +1,20 @@
 {
   "name": "Eugenio Rogav",
-  "short_name": "ER",
+  "short_name": "Eugenio Rogav",
   "start_url": "/",
-  "display": "minimal-ui",
-  "background_color": "#fafafa",
-  "theme_color": "#2563eb",
-  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
